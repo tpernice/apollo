@@ -31,10 +31,8 @@ final class CalculatorApp {
     SyncHandler<Response<Integer>> addHandler = context -> add(context.request());
 
     environment.routingEngine()
-        .registerAutoRoute(Route.with(exceptionHandler(), "GET", "/add", addHandler));
+        .registerAutoRoute(Route.with(exceptionHandler(), "GET", "/add", addHandler))
         .registerAutoRoute(Route.sync("GET", "/unsafeadd", addHandler));
-    	.registerAutoRoute(Route.with(exceptionHandler(), "GET", "/multiply", addHandler));
-    	.registerAutoRoute(Route.sync("GET", "/unsafemultiply", addHandler));
   }
 
   /**
@@ -53,27 +51,6 @@ final class CalculatorApp {
       return Response.forStatus(Status.BAD_REQUEST);
     }
   }
-  
-  
-  /**
-   * A simple multiplier of request parameters {@code t1} and {@code t2}
-   *
-   * @param request  The request to handle the multiply for
-   * @return A response of an integer representing the moltiplication
-   */
-  static Response<Integer> multiply(Request request) {
-    Optional<String> t1 = request.parameter("t1");
-    Optional<String> t2 = request.parameter("t2");
-    if (t1.isPresent() && t2.isPresent()) {
-      int result = Integer.valueOf(t1.get()) * Integer.valueOf(t2.get());
-      return Response.forPayload(result);
-    } else {
-      return Response.forStatus(Status.BAD_REQUEST);
-    }
-  }
-  
-  
-  
 
   /**
    * A generic middleware that maps uncaught exceptions to error code 418
