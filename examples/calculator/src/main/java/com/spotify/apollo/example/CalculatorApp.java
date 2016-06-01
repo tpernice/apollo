@@ -58,8 +58,8 @@ final class CalculatorApp {
   /**
    * A simple multiplier of request parameters {@code t1} and {@code t2}
    *
-   * @param request  The request to handle the addition for
-   * @return A response of an integer representing the sum
+   * @param request  The request to handle the multiply for
+   * @return A response of an integer representing the moltiplication
    */
   static Response<Integer> multiply(Request request) {
     Optional<String> t1 = request.parameter("t1");
