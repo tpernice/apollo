@@ -74,7 +74,7 @@ public class ArtistResource {
         // This .exceptionally doesn't provide any additional value,
         // but it shows how you could handle exceptions
         .exceptionally(throwable -> Response
-            .forStatus(Status.INTERNAL_SERVER_ERROR.withReasonPhrase("Something failed")));
+            .forStatus(Status.INTERNAL_SERVER_ERROR.withReasonPhrase("Something big failed")));
   }
 
   /**
