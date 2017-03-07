@@ -37,9 +37,9 @@
     </properties>
 
     <scm>
-        <url>https://github.com/spotify/apollo</url>
-        <connection>scm:git:git@github.com:spotify/apollo.git</connection>
-        <developerConnection>scm:git:git@github.com:spotify/apollo.git</developerConnection>
+        <url>https://github.com/tpernice/apollo</url>
+        <connection>scm:git:git@github.com:tpernice/apollo.git</connection>
+        <developerConnection>scm:git:git@github.com:tpernice/apollo.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
